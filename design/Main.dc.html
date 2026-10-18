@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Воронка вакансии</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A;background:#F5F3F8}
+button{font-family:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:900px;background:#F5F3F8">
+  <nav style="flex:0 0 232px;box-sizing:border-box;background:#1A1A1A;color:#fff;padding:20px 16px;display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:40px;height:40px;border-radius:12px;background:#8BEA00;color:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;text-align:center;line-height:1.1">лого</div>
+      <div style="font-family:Unbounded,sans-serif;font-size:13px;font-weight:700">HR · Движ!</div>
+    </div>
+    <a href="Vacancies.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Вакансии</a>
+    <a href="Main.dc.html" style="display:block;padding:12px 14px;border-radius:12px;background:#8BEA00;color:#1A1A1A;text-decoration:none;font-size:15px;font-weight:700">Воронка</a>
+    <a href="Candidate.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Кандидаты</a>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;font-size:15px"><span>Задачи</span><span style="background:#FF2100;color:#fff;border-radius:10px;padding:2px 8px;font-size:12px;font-weight:700;border:1px solid #fff">4</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;font-size:15px"><span>Сообщения</span><span style="background:#9000EA;color:#fff;border-radius:10px;padding:2px 8px;font-size:12px;font-weight:700">2</span></div>
+    <div style="padding:12px 14px;font-size:15px">Настройки</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:12px 8px;border-top:1px solid #3a3a3a">
+      <div style="width:36px;height:36px;border-radius:50%;background:#9000EA;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px">АС</div>
+      <div><div style="font-size:14px;font-weight:700">Анна Соколова</div><div style="font-size:12px;color:#B9B6C2">Рекрутер</div></div>
+    </div>
+  </nav>
+
+  <main style="flex:999 1 560px;min-width:0;padding:28px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
+    <header style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between">
+      <div>
+        <div style="font-size:13px;color:#5C5868;margin-bottom:6px">Вакансии / Инструктор по вождению</div>
+        <h1 style="margin:0;font-family:Unbounded,sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.5px">Инструктор по вождению</h1>
+        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+          <span style="background:#EFE0FC;color:#5A0094;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">Открыта</span>
+          <span style="background:#fff;border:1px solid #E6E2EC;border-radius:999px;padding:4px 12px;font-size:13px">Вологда · полная занятость</span>
+          <span style="background:#fff;border:1px solid #E6E2EC;border-radius:999px;padding:4px 12px;font-size:13px">Нанимающий: Игорь Петров</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:2px solid #1A1A1A;background:#fff;font-size:15px;font-weight:700">Импорт откликов</button>
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-size:15px;font-weight:700">+ Кандидат</button>
+      </div>
+    </header>
+
+    <div style="display:flex;gap:6px;border-bottom:2px solid #E6E2EC">
+      <div style="padding:10px 16px;font-weight:700;border-bottom:4px solid #9000EA;margin-bottom:-2px">Воронка</div>
+      <div style="padding:10px 16px;color:#5C5868">Список</div>
+      <div style="padding:10px 16px;color:#5C5868">Команда</div>
+      <div style="padding:10px 16px;color:#5C5868">Настройки</div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <div style="flex:1 1 240px;min-height:44px;box-sizing:border-box;border:1px solid #D9D4E2;background:#fff;border-radius:14px;padding:0 16px;display:flex;align-items:center;color:#6B6678">Поиск по имени, телефону, email</div>
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #D9D4E2;background:#fff;font-size:14px">Источник: все</button>
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #D9D4E2;background:#fff;font-size:14px">Ответственный: все</button>
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #1A1A1A;background:#8BEA00;font-size:14px;font-weight:700">Только просроченные</button>
+    </div>
+
+    <div style="display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;align-items:flex-start">
+      <sc-for list="{{columns}}" as="col" hint-placeholder-count="5">
+        <section style="flex:0 0 272px;background:#ECE8F2;border-radius:20px;padding:12px;box-sizing:border-box">
+          <div style="height:6px;border-radius:3px;background:{{col.color}};margin:0 4px 12px"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0 6px 10px">
+            <div style="font-weight:700;font-size:15px">{{col.name}}</div>
+            <div style="background:#fff;border-radius:10px;padding:2px 10px;font-size:13px;font-weight:700">{{col.count}}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{col.cards}}" as="c" hint-placeholder-count="2">
+              <article style="background:#fff;border-radius:16px;padding:14px;border:{{c.border}};display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;justify-content:space-between;gap:8px">
+                  <div style="font-weight:700;font-size:15px;line-height:1.25">{{c.name}}</div>
+                  <div style="width:28px;height:28px;flex:0 0 28px;border-radius:50%;background:{{c.avBg}};color:{{c.avFg}};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">{{c.owner}}</div>
+                </div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap">
+                  <span style="background:#F1EEF6;border-radius:8px;padding:3px 8px;font-size:12px">{{c.source}}</span>
+                  <span style="background:{{c.dayBg}};border-radius:8px;padding:3px 8px;font-size:12px;font-weight:700;color:#1A1A1A">{{c.days}}</span>
+                </div>
+                <div style="font-size:13px;color:#5C5868">{{c.note}}</div>
+              </article>
+            </sc-for>
+          </div>
+        </section>
+      </sc-for>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const P = '#9000EA', W = '#fff';
+    const mk = (name, owner, source, days, over, note, hot) => ({
+      name, owner, source, days, note,
+      avBg: owner === 'АС' ? '#9000EA' : '#1A1A1A', avFg: W,
+      dayBg: over ? '#FFD3CC' : '#F1EEF6',
+      border: over ? '2px solid #FF2100' : '1px solid #E6E2EC'
+    });
+    return { columns: [
+      { name: 'Новые', color: '#8E8A99', count: 4, cards: [
+        mk('Дмитрий Орлов','АС','hh.ru','2 дн.',false,'Отклик: стаж 6 лет, кат. B,C'),
+        mk('Мария Белова','АС','hh.ru','3 дн.',true,'Просрочен SLA: ответить'),
+        mk('Сергей Ким','ИП','Рекомендация','1 дн.',false,'Рекомендует Игорь П.'),
+        mk('Олег Ярков','АС','Вручную','1 дн.',false,'Звонок в 15:00')
+      ]},
+      { name: 'Скрининг', color: '#FF2100', count: 3, cards: [
+        mk('Елена Мухина','АС','hh.ru','4 дн.',true,'Нет ответа 2 дня'),
+        mk('Артём Власов','АС','hh.ru','1 дн.',false,'Звонок назначен'),
+        mk('Наталья Громова','ИП','Сайт','2 дн.',false,'Ждём документы')
+      ]},
+      { name: 'Интервью', color: P, count: 2, cards: [
+        mk('Павел Соловьёв','ИП','hh.ru','2 дн.',false,'Чт 14:00 · Игорь Петров'),
+        mk('Ирина Лебедева','АС','База резюме','5 дн.',false,'Оценка интервьюера ждёт')
+      ]},
+      { name: 'Оффер', color: '#8BEA00', count: 1, cards: [
+        mk('Роман Тихонов','АС','hh.ru','1 дн.',false,'Условия на согласовании')
+      ]},
+      { name: 'Принят', color: '#1A1A1A', count: 1, cards: [
+        mk('Алексей Жуков','АС','hh.ru','—',false,'Выход 03.11 · задача на онбординг')
+      ]}
+    ]};
+  }
+}
+</script>
+</body>
+</html>
