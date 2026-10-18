@@ -4,3 +4,5 @@
 .cand-card[draggable="true"]:active{cursor:grabbing}
 .cand-card.dragging{opacity:.35;border-style:dashed}
 .lane.drag-target{background:#e7d4f8;outline:2px dashed var(--p);outline-offset:-2px;transition:background .12s}
+
+.stage-settings{display:flex;flex-direction:column;gap:10px;max-height:48vh;overflow:auto}.stage-setting{border:1px solid var(--border);border-radius:13px;padding:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stage-setting .actions{gap:5px}
