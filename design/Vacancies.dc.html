@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Список вакансий</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A;background:#F5F3F8}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:860px">
+  <nav style="flex:0 0 232px;box-sizing:border-box;background:#1A1A1A;color:#fff;padding:20px 16px;display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:40px;height:40px;border-radius:12px;background:#8BEA00;color:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">лого</div>
+      <div style="font-family:Unbounded,sans-serif;font-size:13px;font-weight:700">HR · Движ!</div>
+    </div>
+    <a href="Vacancies.dc.html" style="display:block;padding:12px 14px;border-radius:12px;background:#8BEA00;color:#1A1A1A;text-decoration:none;font-size:15px;font-weight:700">Вакансии</a>
+    <a href="Main.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Воронка</a>
+    <a href="Candidate.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Кандидаты</a>
+    <div style="padding:12px 14px;font-size:15px">Задачи</div>
+    <div style="padding:12px 14px;font-size:15px">Сообщения</div>
+    <div style="padding:12px 14px;font-size:15px">Настройки</div>
+  </nav>
+  <main style="flex:999 1 560px;min-width:0;padding:28px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
+    <header style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
+      <h1 style="margin:0;font-family:Unbounded,sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.5px">Вакансии</h1>
+      <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-size:15px;font-weight:700">+ Вакансия</button>
+    </header>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+      <div style="background:#9000EA;color:#fff;border-radius:20px;padding:18px"><div style="font-size:13px">Открытых вакансий</div><div style="font-family:Unbounded,sans-serif;font-size:36px;font-weight:700">6</div></div>
+      <div style="background:#8BEA00;border-radius:20px;padding:18px"><div style="font-size:13px">Кандидатов в работе</div><div style="font-family:Unbounded,sans-serif;font-size:36px;font-weight:700">48</div></div>
+      <div style="background:#fff;border:2px solid #FF2100;border-radius:20px;padding:18px"><div style="font-size:13px">Просрочено по SLA</div><div style="font-family:Unbounded,sans-serif;font-size:36px;font-weight:700">7</div></div>
+      <div style="background:#fff;border:1px solid #E6E2EC;border-radius:20px;padding:18px"><div style="font-size:13px">Интервью на неделе</div><div style="font-family:Unbounded,sans-serif;font-size:36px;font-weight:700">9</div></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #1A1A1A;background:#8BEA00;font-size:14px;font-weight:700">Открытые</button>
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #D9D4E2;background:#fff;font-size:14px">Черновики</button>
+      <button style="min-height:44px;padding:0 16px;border-radius:14px;border:1px solid #D9D4E2;background:#fff;font-size:14px">Закрытые</button>
+    </div>
+    <div style="overflow-x:auto;background:#fff;border-radius:20px;border:1px solid #E6E2EC">
+      <table style="width:100%;min-width:720px;border-collapse:collapse;font-size:15px">
+        <thead><tr style="text-align:left;color:#5C5868;font-size:13px">
+          <th style="padding:16px 20px">Вакансия</th><th style="padding:16px 10px">Статус</th><th style="padding:16px 10px">Кандидаты</th><th style="padding:16px 10px">Просрочено</th><th style="padding:16px 10px">Нанимающий</th><th style="padding:16px 20px">Рекрутер</th>
+        </tr></thead>
+        <tbody>
+          <sc-for list="{{rows}}" as="r" hint-placeholder-count="5">
+            <tr style="border-top:1px solid #EEEAF3">
+              <td style="padding:16px 20px"><a href="Main.dc.html" style="color:#1A1A1A;font-weight:700;text-decoration:none">{{r.title}}</a><div style="font-size:13px;color:#5C5868">{{r.city}}</div></td>
+              <td style="padding:16px 10px"><span style="background:{{r.stBg}};border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">{{r.status}}</span></td>
+              <td style="padding:16px 10px;font-weight:700">{{r.count}}</td>
+              <td style="padding:16px 10px"><span style="background:{{r.ovBg}};border-radius:8px;padding:3px 10px;font-weight:700">{{r.over}}</span></td>
+              <td style="padding:16px 10px">{{r.hm}}</td>
+              <td style="padding:16px 20px">{{r.hr}}</td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const row = (title, city, status, count, over, hm, hr) => ({
+      title, city, status, count, over, hm, hr,
+      stBg: status === 'Открыта' ? '#EFE0FC' : '#ECE8F2',
+      ovBg: over > 0 ? '#FFD3CC' : '#F1EEF6'
+    });
+    return { rows: [
+      row('Инструктор по вождению','Вологда','Открыта',14,3,'Игорь Петров','Анна Соколова'),
+      row('Преподаватель теории ПДД','Вологда','Открыта',9,1,'Светлана Орлова','Анна Соколова'),
+      row('Администратор','Череповец','Открыта',11,2,'Мария Ким','Иван Платонов'),
+      row('Менеджер по продажам','Вологда','Открыта',8,1,'Мария Ким','Иван Платонов'),
+      row('Механик','Вологда','Черновик',0,0,'Игорь Петров','Анна Соколова')
+    ].map(r => ({...r, over: r.over})) };
+  }
+}
+</script>
+</body>
+</html>
