@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Вид нанимающего руководителя</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A;background:#F5F3F8}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:860px">
+  <nav style="flex:0 0 232px;box-sizing:border-box;background:#1A1A1A;color:#fff;padding:20px 16px;display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:40px;height:40px;border-radius:12px;background:#8BEA00;color:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">лого</div>
+      <div style="font-family:Unbounded,sans-serif;font-size:13px;font-weight:700">HR · Движ!</div>
+    </div>
+    <div style="padding:12px 14px;border-radius:12px;background:#8BEA00;color:#1A1A1A;font-size:15px;font-weight:700">Мои вакансии</div>
+    <div style="padding:12px 14px;font-size:15px">Интервью</div>
+    <div style="padding:12px 14px;font-size:15px">Сообщения</div>
+    <div style="margin-top:auto;display:flex;align-items:center;gap:10px;padding:12px 8px;border-top:1px solid #3a3a3a">
+      <div style="width:36px;height:36px;border-radius:50%;background:#9000EA;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px">ИП</div>
+      <div><div style="font-size:14px;font-weight:700">Игорь Петров</div><div style="font-size:12px;color:#B9B6C2">Нанимающий руководитель</div></div>
+    </div>
+  </nav>
+  <main style="flex:999 1 560px;min-width:0;padding:28px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
+    <h1 style="margin:0;font-family:Unbounded,sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.5px">Инструктор по вождению</h1>
+    <div style="background:#EFE0FC;border-radius:16px;padding:14px 18px;font-size:14px;display:flex;gap:12px;align-items:center">
+      <b style="color:#5A0094">Ограниченный вид</b>
+      <span>Телефоны и email кандидатов скрыты настройкой организации. Заметки «Только HR» не показываются.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+      <div style="background:#fff;border:1px solid #E6E2EC;border-radius:20px;padding:18px"><div style="font-size:13px;color:#5C5868">Ждут вашего решения</div><div style="font-family:Unbounded,sans-serif;font-size:34px;font-weight:700">3</div></div>
+      <div style="background:#8BEA00;border-radius:20px;padding:18px"><div style="font-size:13px">Интервью на неделе</div><div style="font-family:Unbounded,sans-serif;font-size:34px;font-weight:700">2</div></div>
+    </div>
+    <div style="background:#fff;border-radius:24px;border:1px solid #E6E2EC;padding:8px 8px">
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="4">
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 16px;border-top:{{r.line}}">
+          <div style="display:flex;gap:14px;align-items:center;min-width:240px">
+            <div style="width:44px;height:44px;border-radius:50%;background:#1A1A1A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">{{r.ini}}</div>
+            <div><div style="font-weight:700">{{r.name}}</div><div style="font-size:13px;color:#5C5868">{{r.stage}}</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <span style="background:#F1EEF6;border-radius:8px;padding:4px 10px;font-size:13px;color:#5C5868">Телефон скрыт</span>
+            <span style="background:#F1EEF6;border-radius:8px;padding:4px 10px;font-size:13px;color:#5C5868">Email скрыт</span>
+            <button style="min-height:44px;padding:0 18px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-weight:700;font-size:14px">Оценить</button>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const r = (name, ini, stage, first) => ({ name, ini, stage, line: first ? 'none' : '1px solid #EEEAF3' });
+    return { rows: [
+      r('Павел Соловьёв','ПС','Интервью · чт 14:00',true),
+      r('Ирина Лебедева','ИЛ','Интервью · оценка ждёт вас',false),
+      r('Роман Тихонов','РТ','Оффер · согласование',false),
+      r('Артём Власов','АВ','Скрининг',false)
+    ]};
+  }
+}
+</script>
+</body>
+</html>
