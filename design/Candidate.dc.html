@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карточка кандидата</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A;background:#F5F3F8}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="display:flex;flex-wrap:wrap;min-height:980px">
+  <nav style="flex:0 0 232px;box-sizing:border-box;background:#1A1A1A;color:#fff;padding:20px 16px;display:flex;flex-direction:column;gap:6px">
+    <div style="display:flex;align-items:center;gap:10px;padding:4px 8px 20px">
+      <div style="width:40px;height:40px;border-radius:12px;background:#8BEA00;color:#1A1A1A;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700">лого</div>
+      <div style="font-family:Unbounded,sans-serif;font-size:13px;font-weight:700">HR · Движ!</div>
+    </div>
+    <a href="Vacancies.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Вакансии</a>
+    <a href="Main.dc.html" style="display:block;padding:12px 14px;border-radius:12px;color:#fff;text-decoration:none;font-size:15px">Воронка</a>
+    <a href="Candidate.dc.html" style="display:block;padding:12px 14px;border-radius:12px;background:#8BEA00;color:#1A1A1A;text-decoration:none;font-size:15px;font-weight:700">Кандидаты</a>
+    <div style="padding:12px 14px;font-size:15px">Задачи</div>
+    <div style="padding:12px 14px;font-size:15px">Сообщения</div>
+  </nav>
+  <main style="flex:999 1 560px;min-width:0;padding:28px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px">
+    <div style="font-size:13px;color:#5C5868">Воронка / Инструктор по вождению / Мария Белова</div>
+    <header style="background:#fff;border-radius:24px;padding:24px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;border:1px solid #E6E2EC">
+      <div style="display:flex;gap:18px;align-items:center">
+        <div style="width:72px;height:72px;border-radius:50%;background:#9000EA;color:#fff;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-size:22px;font-weight:700">МБ</div>
+        <div>
+          <h1 style="margin:0;font-family:Unbounded,sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.5px">Мария Белова</h1>
+          <div style="margin-top:6px;font-size:15px;color:#3A3744">+7 900 123-45-67 · maria.belova@mail.ru</div>
+          <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+            <span style="background:#F1EEF6;border-radius:8px;padding:3px 10px;font-size:12px">hh.ru</span>
+            <span style="background:#FFD3CC;border-radius:8px;padding:3px 10px;font-size:12px;font-weight:700">Просрочен SLA · 3 дн.</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <div style="min-height:44px;box-sizing:border-box;padding:0 16px;border-radius:14px;background:#8BEA00;display:flex;align-items:center;font-weight:700">Этап: Новые</div>
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-size:15px;font-weight:700">Перевести на «Скрининг»</button>
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:2px solid #1A1A1A;background:#fff;font-size:15px;font-weight:700">Отказ</button>
+      </div>
+    </header>
+
+    <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+      <section style="flex:999 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div style="background:#fff;border-radius:24px;padding:24px;border:1px solid #E6E2EC">
+          <div style="display:flex;gap:6px;border-bottom:2px solid #E6E2EC;margin-bottom:18px">
+            <div style="padding:8px 14px;font-weight:700;border-bottom:4px solid #9000EA;margin-bottom:-2px">История</div>
+            <div style="padding:8px 14px;color:#5C5868">Заметки</div>
+            <div style="padding:8px 14px;color:#5C5868">Файлы</div>
+            <div style="padding:8px 14px;color:#5C5868">Чат</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <sc-for list="{{events}}" as="e" hint-placeholder-count="4">
+              <div style="display:flex;gap:14px">
+                <div style="width:12px;height:12px;flex:0 0 12px;border-radius:50%;background:{{e.dot}};margin-top:5px"></div>
+                <div><div style="font-weight:700;font-size:15px">{{e.title}}</div><div style="font-size:13px;color:#5C5868;margin-top:2px">{{e.meta}}</div></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:#fff;border-radius:24px;padding:24px;border:1px solid #E6E2EC">
+          <div style="font-weight:700;margin-bottom:10px">Заметка</div>
+          <div style="border:1px solid #D9D4E2;border-radius:14px;min-height:72px;padding:12px 14px;color:#6B6678">Напишите заметку. Видимость: только HR / HR и нанимающий</div>
+          <div style="display:flex;justify-content:space-between;gap:10px;margin-top:12px;flex-wrap:wrap">
+            <div style="display:flex;gap:8px"><span style="background:#1A1A1A;color:#fff;border-radius:999px;padding:6px 14px;font-size:13px">Только HR</span><span style="background:#F1EEF6;border-radius:999px;padding:6px 14px;font-size:13px">HR и нанимающий</span></div>
+            <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-weight:700;font-size:15px">Сохранить</button>
+          </div>
+        </div>
+      </section>
+
+      <aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <div style="background:#fff;border-radius:24px;padding:20px;border:1px solid #E6E2EC">
+          <div style="font-weight:700;margin-bottom:12px">Задачи</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border:2px solid #FF2100;border-radius:14px;padding:12px"><b>Позвонить кандидату</b><div style="font-size:13px;color:#5C5868">Вчера · Анна Соколова</div></div>
+            <div style="background:#F5F3F8;border-radius:14px;padding:12px"><b>Запросить права категории</b><div style="font-size:13px;color:#5C5868">Завтра · Анна Соколова</div></div>
+          </div>
+          <button style="margin-top:12px;min-height:44px;width:100%;border-radius:14px;border:2px solid #1A1A1A;background:#fff;font-weight:700;font-size:15px">+ Задача</button>
+        </div>
+        <div style="background:#fff;border-radius:24px;padding:20px;border:1px solid #E6E2EC">
+          <div style="font-weight:700;margin-bottom:12px">Данные</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px">
+            <span style="color:#5C5868">Вакансия</span><span>Инструктор по вождению</span>
+            <span style="color:#5C5868">Источник</span><span>hh.ru</span>
+            <span style="color:#5C5868">Ответственный</span><span>Анна Соколова</span>
+            <span style="color:#5C5868">Город</span><span>Вологда</span>
+            <span style="color:#5C5868">Опыт</span><span>6 лет</span>
+          </div>
+        </div>
+        <div style="background:#9000EA;color:#fff;border-radius:24px;padding:20px">
+          <div style="font-weight:700">Резюме</div>
+          <div style="font-size:14px;margin-top:6px">resume_belova.pdf · 214 КБ</div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { events: [
+      { title: 'Задача просрочена: позвонить кандидату', meta: 'Сегодня, 09:00 · система', dot: '#FF2100' },
+      { title: 'Создана задача «Позвонить кандидату»', meta: 'Вчера, 10:15 · Анна Соколова', dot: '#9000EA' },
+      { title: 'Заметка: опыт подходит, нужны права категории C', meta: 'Вчера, 10:12 · Анна Соколова · только HR', dot: '#1A1A1A' },
+      { title: 'Отклик получен с hh.ru', meta: '15 окт., 18:40 · автоимпорт', dot: '#8BEA00' }
+    ]};
+  }
+}
+</script>
+</body>
+</html>
