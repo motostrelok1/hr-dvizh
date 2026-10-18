@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Основы дизайн-системы</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A}</style>
+</helmet>
+<div style="width:1000px;height:820px;box-sizing:border-box;padding:48px;background:#fff;display:flex;flex-direction:column;gap:32px">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <h1 style="margin:0;font-family:Unbounded,sans-serif;font-size:36px;font-weight:700;letter-spacing:-1px">Основы интерфейса HR</h1>
+    <div style="font-size:14px;color:#5C5868;text-align:right">Бренд-бук «Движ!»<br>рабочая версия для CRM</div>
+  </div>
+
+  <section>
+    <div style="font-size:13px;font-weight:700;color:#5C5868;margin-bottom:10px">ЦВЕТ</div>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px">
+      <div style="background:#9000EA;color:#fff;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Фиолетовый</b><br>#9000EA<br><span style="font-size:12px">главное действие</span></div>
+      <div style="background:#8BEA00;color:#1A1A1A;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Лайм</b><br>#8BEA00<br><span style="font-size:12px">активное, успех</span></div>
+      <div style="background:#FF2100;color:#fff;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Красный</b><br>#FF2100<br><span style="font-size:12px">просрочка</span></div>
+      <div style="background:#1A1A1A;color:#fff;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Графит</b><br>#1A1A1A<br><span style="font-size:12px">меню, текст</span></div>
+      <div style="background:#ECE8F2;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Колонка</b><br>#ECE8F2<br><span style="font-size:12px">фон воронки</span></div>
+      <div style="background:#F5F3F8;border:1px solid #E6E2EC;border-radius:16px;padding:14px;height:96px;box-sizing:border-box"><b>Фон</b><br>#F5F3F8<br><span style="font-size:12px">рабочая область</span></div>
+    </div>
+    <div style="font-size:13px;color:#5C5868;margin-top:10px">Лайм — только заливка с тёмным текстом. Красный с белым текстом — только крупно или как рамка.</div>
+  </section>
+
+  <section style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#5C5868;margin-bottom:10px">ШРИФТЫ</div>
+      <div style="font-family:Unbounded,sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.5px;line-height:1.1">Заголовки экрана</div>
+      <div style="font-size:12px;color:#5C5868;margin:6px 0 14px">Акцентный шрифт: здесь Unbounded вместо Polonium. Только крупные заголовки.</div>
+      <div style="font-size:20px;font-weight:700">Helvetica Bold — подзаголовки</div>
+      <div style="font-size:15px;margin-top:6px">Helvetica Regular 15 — основной текст, таблицы, карточки</div>
+      <div style="font-size:12px;margin-top:6px;color:#5C5868">Helvetica 12 — подписи, метки</div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#5C5868;margin-bottom:10px">КОМПОНЕНТЫ</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#9000EA;color:#fff;font-size:15px;font-weight:700;font-family:inherit">Главная</button>
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:2px solid #1A1A1A;background:#fff;font-size:15px;font-weight:700;font-family:inherit">Вторичная</button>
+        <button style="min-height:44px;padding:0 20px;border-radius:14px;border:0;background:#8BEA00;font-size:15px;font-weight:700;font-family:inherit">Принять</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+        <span style="background:#EFE0FC;color:#5A0094;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">Открыта</span>
+        <span style="background:#FFD3CC;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">Просрочено</span>
+        <span style="background:#E4F9B8;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">Оффер</span>
+      </div>
+      <div style="background:#fff;border:2px solid #FF2100;border-radius:16px;padding:12px 14px;width:260px;box-sizing:border-box"><b>Мария Белова</b><div style="font-size:13px;color:#5C5868;margin-top:4px">Карточка · скругление 16px</div></div>
+    </div>
+  </section>
+
+  <section style="font-size:14px;color:#3A3744;line-height:1.5;border-top:1px solid #E6E2EC;padding-top:16px">
+    Логотип и символ «д!» не перекрашиваем, не искажаем и не обводим: в макетах стоит плейсхолдер «лого», вставить нужно оригинальный файл. Плюшевые знаки и 3D-картинки бренда — для пустых состояний и экрана входа, не для рабочих экранов.
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1000,"height":820}}'>
+class Component extends DCLogic { renderVals(){ return {}; } }
+</script>
+</body>
+</html>
