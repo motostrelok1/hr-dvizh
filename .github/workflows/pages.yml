@@ -19,12 +19,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Prepare public website
+        run: |
+          mkdir -p dist
+          cp index.html app.js app.css dist/
+          touch dist/.nojekyll
+          test -s dist/index.html
+          ls -la dist
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Upload static site
+      - name: Upload static website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./dist
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
