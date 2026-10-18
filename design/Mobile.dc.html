@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Мобильная воронка</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:"Helvetica Neue",Helvetica,system-ui,sans-serif;color:#1A1A1A}button{font-family:inherit;cursor:pointer}</style>
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#F5F3F8;display:flex;flex-direction:column;overflow:hidden">
+  <header style="background:#9000EA;color:#fff;padding:20px 16px 16px;border-radius:0 0 24px 24px">
+    <div style="font-size:13px;opacity:.9">Вакансия</div>
+    <h1 style="margin:4px 0 0;font-family:Unbounded,sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.3px">Инструктор по вождению</h1>
+  </header>
+  <div style="display:flex;gap:8px;overflow-x:auto;padding:14px 16px 6px">
+    <span style="flex:0 0 auto;background:#8BEA00;border-radius:999px;padding:10px 16px;font-weight:700;font-size:14px">Новые 4</span>
+    <span style="flex:0 0 auto;background:#fff;border:1px solid #D9D4E2;border-radius:999px;padding:10px 16px;font-size:14px">Скрининг 3</span>
+    <span style="flex:0 0 auto;background:#fff;border:1px solid #D9D4E2;border-radius:999px;padding:10px 16px;font-size:14px">Интервью 2</span>
+    <span style="flex:0 0 auto;background:#fff;border:1px solid #D9D4E2;border-radius:999px;padding:10px 16px;font-size:14px">Оффер 1</span>
+  </div>
+  <div style="flex:1;overflow:auto;padding:10px 16px;display:flex;flex-direction:column;gap:10px">
+    <sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
+      <article style="background:#fff;border-radius:16px;padding:14px;border:{{c.border}};display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:16px">{{c.name}}</b><span style="background:{{c.bg}};border-radius:8px;padding:3px 8px;font-size:12px;font-weight:700">{{c.days}}</span></div>
+        <div style="font-size:13px;color:#5C5868">{{c.note}}</div>
+        <button style="min-height:44px;border-radius:14px;border:2px solid #1A1A1A;background:#fff;font-weight:700;font-size:14px">Перевести на следующий этап</button>
+      </article>
+    </sc-for>
+  </div>
+  <nav style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:#1A1A1A;color:#fff;padding:8px 8px 14px">
+    <div style="text-align:center;padding:10px 0;font-size:12px;background:#8BEA00;color:#1A1A1A;border-radius:12px;font-weight:700">Воронка</div>
+    <div style="text-align:center;padding:10px 0;font-size:12px">Задачи</div>
+    <div style="text-align:center;padding:10px 0;font-size:12px">Чат</div>
+    <div style="text-align:center;padding:10px 0;font-size:12px">Ещё</div>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const c = (name, days, over, note) => ({ name, days, note, bg: over ? '#FFD3CC' : '#F1EEF6', border: over ? '2px solid #FF2100' : '1px solid #E6E2EC' });
+    return { cards: [
+      c('Дмитрий Орлов','2 дн.',false,'hh.ru · стаж 6 лет, кат. B,C'),
+      c('Мария Белова','3 дн.',true,'Просрочен SLA: ответить'),
+      c('Сергей Ким','1 дн.',false,'Рекомендация · Игорь П.'),
+      c('Олег Ярков','1 дн.',false,'Звонок в 15:00')
+    ]};
+  }
+}
+</script>
+</body>
+</html>
