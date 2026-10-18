@@ -22,7 +22,7 @@ jobs:
       - name: Prepare public website
         run: |
           mkdir -p dist
-          cp index.html app.js app.css dist/
+          cp index.html app.js app.css pipeline-editor.js dist/
           touch dist/.nojekyll
           test -s dist/index.html
           ls -la dist
